@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegance Boutique</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; color: #333; }
+    nav {
+      background: #2c1a1a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h1 { color: #f5c6d0; font-size: 24px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { color: white; text-decoration: none; }
+    .hero {
+      background: linear-gradient(135deg, #f5c6d0, #e8a0b0);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 { font-size: 48px; color: #2c1a1a; margin-bottom: 15px; }
+    .hero p { font-size: 20px; color: #555; margin-bottom: 30px; }
+    .btn {
+      background: #2c1a1a;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    .services h2 { font-size: 36px; margin-bottom: 40px; color: #2c1a1a; }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #f9f0f2;
+      border-radius: 10px;
+      padding: 30px;
+      width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .card h3 { color: #2c1a1a; margin-bottom: 10px; }
+    .card p { color: #777; font-size: 14px; }
+    .gallery {
+      padding: 60px 20px;
+      background: #f9f0f2;
+      text-align: center;
+    }
+    .gallery h2 { font-size: 36px; margin-bottom: 30px; color: #2c1a1a; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      background: #e8a0b0;
+      height: 150px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .contact {
+      padding: 60px 20px;
+      text-align: center;
+      background: #2c1a1a;
+      color: white;
+    }
+    .contact h2 { font-size: 36px; margin-bottom: 20px; color: #f5c6d0; }
+    .contact p { margin-bottom: 10px; font-size: 18px; }
+    footer {
+      background: #1a0f0f;
+      color: #f5c6d0;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h1>💕 Elegance Boutique</h1>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to Elegance Boutique</h2>
+  <p>Your destination for the latest fashion & style</p>
+  <button class="btn">Shop Now</button>
+</section>
+
+<section class="services" id="services">
+  <h2>Our Collections</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>👗 Ethnic Wear</h3>
+      <p>Beautiful sarees, lehengas and suits for every occasion</p>
+    </div>
+    <div class="card">
+      <h3>👠 Western Wear</h3>
+      <p>Trendy dresses, tops and jeans for modern women</p>
+    </div>
+    <div class="card">
+      <h3>💍 Accessories</h3>
+      <p>Jewellery, bags and more to complete your look</p>
+    </div>
+    <div class="card">
+      <h3>👰 Bridal Wear</h3>
+      <p>Exclusive bridal collections for your special day</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <h2>Our Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">👗</div>
+    <div class="gallery-item">👘</div>
+    <div class="gallery-item">🥻</div>
+    <div class="gallery-item">👠</div>
+    <div class="gallery-item">👒</div>
+    <div class="gallery-item">💄</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Visit Us</h2>
+  <p>📍 123 Fashion Street, Hyderabad</p>
+  <p>📞 +91 98765 43210</p>
+  <p>📧 eleganceboutique@gmail.com</p>
+  <p>🕐 Mon-Sat: 10AM - 8PM</p>
+</section>
+
+<footer>
+  <p>© 2026 Elegance Boutique. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
