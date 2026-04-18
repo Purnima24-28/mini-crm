@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini CRM</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+    h1 { color: #333; }
+    input, select, textarea {
+      width: 100%; padding: 8px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: green; color: white;
+      padding: 10px 20px; border: none;
+      border-radius: 4px; cursor: pointer;
+    }
+    table {
+      width: 100%; background: white;
+      border-collapse: collapse; margin-top: 20px;
+    }
+    th, td { padding: 10px; border: 1px solid #ddd; }
+    th { background: #333; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Client Lead Management System</h1>
+
+  <h2>Add New Lead</h2>
+  <input type="text" id="name" placeholder="Name">
+  <input type="text" id="email" placeholder="Email">
+  <input type="text" id="source" placeholder="Source (e.g. website)">
+  <select id="status">
+    <option value="new">New</option>
+    <option value="contacted">Contacted</option>
+    <option value="converted">Converted</option>
+  </select>
+  <textarea id="notes" placeholder="Notes"></textarea>
+  <button onclick="addLead()">Add Lead</button>
+
+  <h2>All Leads</h2>
+  <table>
+    <tr>
+      <th>ID</th><th>Name</th><th>Email</th>
+      <th>Source</th><th>Status</th><th>Notes</th>
+    </tr>
+    <tbody id="leadsTable"></tbody>
+  </table>
+
+  <script>
+    async function loadLeads() {
+  const res = await fetch('/leads');
+  const leads = await res.json();
+  const tbody = document.getElementById('leadsTable');
+  tbody.innerHTML = '';
+  leads.forEach(lead => {
+    tbody.innerHTML += `<tr>
+      <td>${lead.id}</td>
+      <td>${lead.name}</td>
+      <td>${lead.email}</td>
+      <td>${lead.source}</td>
+      <td>${lead.status}</td>
+      <td>${lead.notes}</td>
+    </tr>`;
+  });
+}
+
+    async function addLead() {
+  const data = {
+  name: document.getElementById('name').value,
+  email: document.getElementById('email').value,
+  source: document.getElementById('source').value,
+  status: document.getElementById('status').value,
+  notes: document.getElementById('notes').value
+};
+  await fetch('/leads', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  loadLeads();
+}
+
+    loadLeads();
+  </script>
+</body>
+</html>
